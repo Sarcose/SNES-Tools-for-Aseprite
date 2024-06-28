@@ -1107,7 +1107,7 @@ local function createDLG_export() -- this is here so I can collapse it in my cod
 			"12.00  ­kb (GFX33.bin)",
 			"23.25 ­­­kb (GFX32.bin)",
 			"32.00 ­­­kb (ALT ExGFX source)",
-			"128.00 ­­­kb (32x32 PlayerGFX)",
+			"128.00 ­­­kb (32x32 Player GFX)",
 			"219.25 kb (AllGFX.bin)"
 		}
 	}
