@@ -320,8 +320,10 @@ local function doExport()
 	local exportsize = DLG_export.data.exportsize
 
 	if exportsize == "Auto (closest)" then
-		if filesize > 32768 then
+		if filesize > 131072 then
 			filesize = 224512
+		elseif filesize > 32768 then
+			filesize = 131072
 		elseif filesize > 24064 then
 			filesize = 32768
 		elseif filesize > 12288 then
@@ -349,6 +351,8 @@ local function doExport()
 		filesize = 23808
 	elseif exportsize == "32.00 ­­­kb (ALT ExGFX source)" then
 		filesize = 32768
+	elseif exportsize == "128.00 kb (32x32 Player GFX)" then
+		filesize = 131072
 	elseif exportsize == "219.25 kb (AllGFX.bin)" then
 		filesize = 224512
 	end
@@ -863,6 +867,8 @@ local function makeGFX()
 		imageheight = 376
 	elseif size == "32.00 ­­­kb (ALT ExGFX source)" then
 		imageheight = 512
+	elseif size == "128.00 kb (32x32 Player GFX)" then
+		imageheight = 2048
 	elseif size == "219.25 kb (AllGFX.bin)" then
 		imageheight = 3512
 	end
@@ -1101,6 +1107,7 @@ local function createDLG_export() -- this is here so I can collapse it in my cod
 			"12.00  ­kb (GFX33.bin)",
 			"23.25 ­­­kb (GFX32.bin)",
 			"32.00 ­­­kb (ALT ExGFX source)",
+			"128.00 ­­­kb (32x32 PlayerGFX)",
 			"219.25 kb (AllGFX.bin)"
 		}
 	}
@@ -1133,6 +1140,7 @@ local function createDLG_blanks() -- this is here so I can collapse it in my cod
 			"12.00  ­kb (GFX33.bin)",
 			"23.25 ­­­kb (GFX32.bin)",
 			"32.00 ­­­kb (ALT ExGFX source)",
+			"128.00 kb (32x32 Player GFX)",
 			"219.25 kb (AllGFX.bin)"
 		}
 	}
